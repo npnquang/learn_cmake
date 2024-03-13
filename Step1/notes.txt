@@ -1,0 +1,7 @@
+in order to put the build files into the build directory:
+1. create a build folder
+2. cd to that folder
+3. run `cmake <path_to_source>` so that cmake knows where is the source code
+4. run `cmkae --build .` so that the build files will be put into the build directory
+
+No need to change dir, the build files will be put into where we are

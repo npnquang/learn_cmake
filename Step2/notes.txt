@@ -1,0 +1,10 @@
+we need to do the following things when adding a dependencies dir
+
+1. inside the cmakelist.txt file of the lib, use add_library(<LIB_NAME> [source files...]) to create a lib target
+2. use add_subdirectory() to let cmake know we have another dir to build
+3. after the add_executable() command, use target_link_libraries(<PROJECT_NAME> PUBLIC <LIB_NAME>) to link the library target with the executable target.
+4. specify the lib's header file location using target_include_directories() command
+5. include the lib's header file inside the top-level source code using #include "<LIB_NAME>.h"
+6. replace the code with the lib code
+
+The argument in the option() command is cached into the CMakeCache.txt file. This means that when we want to change the dependencies, go to that file and find the flag specified in the CMakeLists.txt file and change it to ON or OFF. and run the build command again.
