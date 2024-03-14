@@ -1,4 +1,11 @@
+Adding Usage Requirements for a Library:
+
 Instead of adding the included dir in the top-level CMake file in the target_include_directories() command, we simply add a 
 target_include_directories(<DIR_NAME>
                            INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
                            ) to the CMake file in the child dir
+
+Setting the C++ Standard with Interface Libraries:
+1. remove the normal set(CMAKE_CXX_STANDARD 11) and  set(CMAKE_CXX_STANDARD_REQUIRED True)
+2. create an interface library, tutorial_compiler_flags. And then use target_compile_features() to add the compiler feature cxx_std_11
+3. link our executable Tutorial, our SqrtLibrary library and our MathFunctions library to our new tutorial_compiler_flags library using target_link_libraries()
