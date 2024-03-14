@@ -1,0 +1,4 @@
+Instead of adding the included dir in the top-level CMake file in the target_include_directories() command, we simply add a 
+target_include_directories(<DIR_NAME>
+                           INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}
+                           ) to the CMake file in the child dir
